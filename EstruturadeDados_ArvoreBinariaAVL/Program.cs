@@ -13,16 +13,15 @@ namespace EstruturadeDados_ArvoreBinariaAVL
         public Arvore()
         {
             info = 0;
+            fb = 0;
             sae = sad = null;
         }
 
-        static int FB()
+        public void FB (ref Arvore sae, ref Arvore sad)
         {
-            Arvore sae, sad = null;
-            int FB;
-            FB = sad - sae;
-            return FB;
+
         }
+
 
         public void Insere(int n, ref Arvore RAIZ)
         {
@@ -120,6 +119,15 @@ namespace EstruturadeDados_ArvoreBinariaAVL
             if (this.sae != null) (this.sae).MaiorNivel(ref maiornivel, ref nivelsa);
             if (this.sad != null) (this.sad).MaiorNivel(ref maiornivel, ref nivelsa);
             nivelsa--;
+
+            if (nivelsa > 0)
+            {
+                //rotação para a direita
+            }
+            if (nivelsa < 0)
+            {
+                //rotação para a esquerda
+            }
         }
         
         ~Arvore()
@@ -145,7 +153,6 @@ namespace EstruturadeDados_ArvoreBinariaAVL
                 Console.Clear();
                 Console.WriteLine(" Menu Principal");
                 Console.WriteLine("(1) - Insere um elemento na Árvore");
-                Console.WriteLine("(2) - Pesquisa um elemento na Árvore");
                 Console.WriteLine("(3) - Lista Arvore - Pré-Ordem");
                 Console.WriteLine("(4) - Lista Arvore - Ordem Simétrica");
                 Console.WriteLine("(5) - Lista Arvore - Pos-Ordem");
